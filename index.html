@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.1.1/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="all">
+    <title>ICOMS Macro</title>
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Customer Interactions Generator</h1>
+      <div class="row">
+      <!-- begin form -->
+      <div class="col-sm-6">
+        <div class="form-group">
+          <form id="cc_generator" class="form-horizontal" role="form">
+            <!-- cpni check -->
+            <div class="form-group">
+              <label for="cpni" class="col-sm-2 control-label">CPNI?</label>
+              <div class="col-sm-10">
+                <select class="col-sm-10 form-control" id="cpni">
+                  <option value=""></option>
+                  <option value="YES">Yes</option>
+                </select>
+              </div>
+            </div>
+            <!-- customer name -->
+            <div class="form-group">
+              <label for="custName" class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="custName" placeholder="Customer Name...">
+              </div>
+            </div>
+            <!-- credit check -->
+            <br>
+            <button type="submit" id="submit-btn" class="btn btn-success btn-md">submit</button>
+            <button type="reset" id="reset-btn" class="btn btn-danger btn-md">reset</button>
+          </form>
+        </div>
+      </div>
+      <!-- end form -->
+      <!-- begin results -->
+      <div class="col-sm-6">
+              <pre id="results"></pre>
+      </div>
+      <!-- end results -->
+      </div>
+    </div>
+  </body>
+</html>
