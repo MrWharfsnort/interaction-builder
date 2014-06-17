@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.1.1/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/main.css" rel="stylesheet" type="text/css" media="all">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.1.1/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
     <title>ICOMS Macro</title>
   <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -16,24 +16,42 @@
       <div class="col-sm-6">
         <div class="form-group">
           <form id="cc_generator" class="form-horizontal" role="form">
-            <!-- cpni check -->
+            <!-- CPNI Y/N -->
             <div class="form-group">
-              <label for="cpni" class="col-sm-2 control-label">CPNI?</label>
-              <div class="col-sm-10">
-                <select class="col-sm-10 form-control" id="cpni">
+              <label for="cpni" class="col-sm-5 control-label">CPNI Verification:</label>
+              <div class="col-sm-7">
+                <select class="form-control" id="cpni">
                   <option value=""></option>
                   <option value="YES">Yes</option>
                 </select>
               </div>
             </div>
-            <!-- customer name -->
+            <!-- CALLER'S FULL NAME -->
             <div class="form-group">
-              <label for="custName" class="col-sm-2 control-label">Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="custName" placeholder="Customer Name...">
+              <label for="custName" class="col-sm-5 control-label">Caller's Name</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" id="custName" placeholder="John Smith">
               </div>
             </div>
-            <!-- credit check -->
+            <!-- PERMISSION TO RUN CREDIT CHECK - Y/N -->
+           <div class="form-group">
+              <label for="creditCheck" class="col-sm-5 control-label">Credit Check Permitted:</label>
+              <div class="col-sm-7">
+                <select class="form-control" id="creditCheck">
+                  <option value=""></option>
+                  <option value="YES">Yes</option>
+                </select>
+              </div>
+            </div>
+            <!-- *1ST BILL W/PRORATE (COD) -->
+            <!-- MONTHLY SERVICE -->
+            <!-- DEPOSIT AMOUNT -->
+            <!-- INSTALL AMOUNT -->
+            <!-- EQUIPMENT FEES -->
+            <!-- CAMPAIGN/PACKAGE EXP DATE -->
+            <!-- PRO INSTALL / EXPRESS CONNECT -->
+            <!-- CTM # -->
+            <!-- INSTALL DATE & TIME -->
             <br>
             <button type="submit" id="submit-btn" class="btn btn-success btn-md">submit</button>
             <button type="reset" id="reset-btn" class="btn btn-danger btn-md">reset</button>
