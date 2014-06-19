@@ -1,6 +1,14 @@
 /* main.css */
 
+h1 {
+    border-bottom: 1px solid #d9d9d9;
+}
+
 .container {
-  padding-top: 50px;
-  max-width: 960px;
+    margin-top: 4px;
+    max-width: 960px;
+}
+
+button {
+    margin-right: 15px;
 }
