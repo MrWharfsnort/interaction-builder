@@ -1,14 +1,25 @@
 /* main.css */
+body {
+	background: #eaeaea;
+}
 
 h1 {
     border-bottom: 1px solid #d9d9d9;
 }
 
 .container {
-    margin-top: 4px;
-    max-width: 960px;
+    padding-top: 50px;
+    max-width: 70%;
 }
 
 button {
     margin-right: 15px;
+}
+
+label, button {
+	font-weight: 900 !important;
+}
+
+#results {
+	box-shadow: 3px 3px 7px #a9a9a9;
 }

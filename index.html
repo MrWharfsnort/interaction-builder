@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <title>CI Generator</title>
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
-    <script src="js/main.js"></script>
+  <title>Customer InGen</title>
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css"rel="stylesheet" type="text/css">
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="js/jquery.mask.min.js"></script>
+  <script src="js/main.js"></script>
   </head>
   <body>
     <div class="container">
@@ -19,7 +21,7 @@
         <!-- begin form -->
         <div class="col-sm-7">
           <div class="form-group">
-            <form id="cc_generator" class="form-horizontal" role="form">
+            <form id="generator" class="form-horizontal" role="form">
               <!-- CPNI Y/N -->
               <div class="form-group">
                 <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
@@ -33,13 +35,13 @@
               </div>
               <!-- CALLER'S FULL NAME -->
               <div class="form-group">
-                <label for="custName" class="col-sm-5 control-label input-sm">Caller's Name:</label>
+                <label for="custName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control input-sm" id="custName" placeholder="John Smith">
                 </div>
               </div>
               <!-- PERMISSION TO RUN CREDIT CHECK - Y/N -->
-             <div class="form-group">
+              <div class="form-group">
                 <label for="creditCheck" class="col-sm-5 control-label input-sm">Credit Check Permitted?</label>
                 <div class="col-sm-7">
                   <select class="form-control input-sm" id="creditCheck">
@@ -97,14 +99,14 @@
                 <div class="col-sm-7">
                   <select class="form-control input-sm" id="installType">
                     <option value="" selected disabled>Please select...</option>
-                    <option value="PROFESSIONAL">Professional Installation</option>
+                    <option value="PRO INSTALL">Professional Installation</option>
                     <option value="EXPRESS CONNECT">Express Connect</option>
                   </select>
                 </div>
               </div>
               <!-- CTM # -->
               <div class="form-group">
-                <label for="contactNumber" class="col-sm-5 control-label input-sm">Contact Number:</label>
+                <label for="contactNumber" class="col-sm-5 control-label input-sm">Call-to-Meet Number:</label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control input-sm" id="contactNumber" placeholder="555-867-5309">
                 </div>

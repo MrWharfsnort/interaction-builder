@@ -10,12 +10,21 @@ $().ready(function () {
     });
   });
 
+  $(function () {
+    $("#contactNumber").mask("(999) 999-9999", {placeholder: "(___) ___-____"});
+  });
+    // 0: Only Numbers.
+    // 9: Only Numbers but optional.
+    // #: Only Numbers but recusive.
+    // A: Numbers and Letters.
+    // S: Only A-Z and a-z characters.
+
   $("#submit-btn").click(function (e) {
     e.preventDefault();
     $("#results").show();
 
     var cpniVerified = $("#cpniVerified").val();
-    var custName = $("#custName").val();
+    var custName = $("#custName").val().toUpperCase();
     var creditCheck = $("#creditCheck").val();
     var firstBill = $("#firstBill").val();
     var monthlyService = $("#monthlyService").val();
@@ -29,7 +38,7 @@ $().ready(function () {
 
     var cc1 = "====$$$$=== SALES DEPT MACRO ===$$$$====\n";
     var cc2 = "* CPNI VERIFIED: " + cpniVerified + "\n";
-    var cc3 = "* CALLER'S FULL NAME: " + custName + "\n";
+    var cc3 = "* CALLER'S NAME: " + custName + "\n";
     var cc4 = "* PERMISSION TO RUN CREDIT CHECK: " + creditCheck + "\n";
     var cc5 = "* 1ST BILL W/ PRORATE (COD): " + firstBill + "\n";
     var cc6 = "* MONTHLY SERVICE RATE: " + monthlyService + "\n";
@@ -49,7 +58,7 @@ $().ready(function () {
   $("#reset-btn").click(function (e) {
     e.preventDefault();
     $("input").val('');
-    $("#results").empty().hide();
+    $("#results").hide();
   });
 
 });
