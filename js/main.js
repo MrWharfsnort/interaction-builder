@@ -12,7 +12,7 @@ $().ready(function () {
       pickTime: false
     });
     $("#callTime").datetimepicker({
-      pickTime: false
+      getCurrentTime: true
     });
   });
 
@@ -36,6 +36,7 @@ $().ready(function () {
 // Clicking the reset button clears all input values
 // and hides the results box
     $("input").val('');
+    $("select").val('');
     $("#results").hide();
   });
 

@@ -3,13 +3,13 @@ body {
 	background: #eaeaea;
 }
 
-h1 {
+h1, h2, h3 {
     border-bottom: 1px solid #d9d9d9;
 }
 
 .container {
     padding-top: 50px;
-    max-width: 70%;
+    max-width: 75%;
 }
 
 button {
@@ -21,5 +21,6 @@ label, button {
 }
 
 #results {
+    border: 1px solid #a9a9a9;
 	box-shadow: 3px 3px 7px #a9a9a9;
 }

@@ -3,7 +3,6 @@ $().ready(function () {
     e.preventDefault();
     $("#results").show();
 
-    // var foo = $("#foo").val();
     var callTime = $("#callTime").val();
     var cpniVerified = $("#cpniVerified").val();
     var callerName = $("#callerName").val().toUpperCase();
@@ -25,7 +24,7 @@ $().ready(function () {
     var cc4 = "* CALLERS FULL NAME: " + callerName + "\n";
     var cc5 = "* PIN VERIFIED(?): " + pinVerified + "\n";
     var cc6 = "* PPIO/MAIL/PHONE: " + payMethod + "\n";
-    var cc7 = "* AARG/PAST DUE: " + pastDue + "\n";
+    var cc7 = "* ARRG/PAST DUE: " + pastDue + "\n";
     var cc8 = "* ARRG/CURRENT: " + currentDue + "\n";
     var cc9 = "* STATUS: " + acctStatus + "\n";
     var cc10 = "* BILL DUE DATE: " + billDate + "\n";
