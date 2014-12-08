@@ -29,7 +29,7 @@
             <div class="form-group">
               <label for="callTime" class="col-sm-5 control-label input-md">Date/Time of Call?</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-md" id="callTime" data-date-format="M/D/YY h:mm A" />
+                <input type="text" class="form-control input-md" id="callTime" data-date-format="M/D/YY h:mm A" / placeholder="10/31/14 10:31 pm">
               </div>
             </div>
             <!--cpniVerified-->
@@ -47,7 +47,7 @@
             <div class="form-group">
               <label for="callerName" class="col-sm-5 control-label input-md">Caller's Full Name:</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-md" id="callerName"/>
+                <input type="text" class="form-control input-md" id="callerName"/ placeholder="John Smith">
               </div>
             </div>
             <!--pinVerified-->
@@ -63,7 +63,7 @@
             </div>
             <!--payMethod-->
             <div class="form-group">
-            <label for="pinVerified" class="col-sm-5 control-label input-md">Payment Method:</label>
+            <label for="payMethod" class="col-sm-5 control-label input-md">Payment Method:</label>
               <div class="col-sm-7">
                 <select class="form-control input-md" id="payMethod">
                   <option value="" selected disabled>Please select...</option>
@@ -73,7 +73,22 @@
                 </select>
               </div>
             </div>
-            <!--calendarTest-->
+            <!-- pastDue -->
+            <div class="form-group">
+              <label for="pastDue" class="col-sm-5 control-label input-md">Past Due Arrangement:</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control input-md" id="pastDue" placeholder="$19.95">
+                </div>
+            </div>
+            <!-- currentDue -->
+            <div class="form-group">
+              <label for="currentDue" class="col-sm-5 control-label input-md">Current Due Arrangement</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-md" id="currentDue" placeholder="$19.95">
+              </div>
+            </div>
+
+            
             
             <!-- end form -->
             <div class="form-group col-md-offset-7" id="buttons">
