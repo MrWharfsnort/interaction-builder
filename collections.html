@@ -27,17 +27,17 @@
           <form id="generator" class="form-horizontal" role="form">
             <!--callTime-->
             <div class="form-group">
-              <label for="callTime" class="col-sm-5 control-label input-md">Date/Time of Call?</label>
+              <label for="callTime" class="col-sm-5 control-label input-sm">Date/Time of Call?</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-md" id="callTime" data-date-format="M/D/YY h:mm A" / placeholder="10/31/14 10:31 pm">
+                <input type="text" class="form-control input-sm" id="callTime" data-date-format="M/D/YY h:mm A" / placeholder="10/31/14 10:31 PM">
               </div>
             </div>
             <!--cpniVerified-->
             <div class="form-group">
-              <label for="cpniVerified" class="col-sm-5 control-label input-md">CPNI Verfied(?)</label>
+              <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verfied(?)</label>
               <div class="col-sm-7">
-                <select class="form-control input-md" id="cpniVerified">
-                  <option value="" selected disabled>Please select...</option>
+                <select class="form-control input-sm" id="cpniVerified">
+                  <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
                 </select>
@@ -45,17 +45,17 @@
             </div>
             <!--callerName-->
             <div class="form-group">
-              <label for="callerName" class="col-sm-5 control-label input-md">Caller's Full Name:</label>
+              <label for="callerName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-md" id="callerName"/ placeholder="John Smith">
+                <input type="text" class="form-control input-sm" id="callerName"/ placeholder="John Smith">
               </div>
             </div>
             <!--pinVerified-->
             <div class="form-group">
-              <label for="pinVerified" class="col-sm-5 control-label input-md">Pin Verified?</label>
+              <label for="pinVerified" class="col-sm-5 control-label input-sm">Pin Verified?</label>
               <div class="col-sm-7">
-                <select class="form-control input-md" id="pinVerified">
-                  <option value="" selected disabled>Please select...</option>
+                <select class="form-control input-sm" id="pinVerified">
+                  <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
                 </select>
@@ -63,10 +63,10 @@
             </div>
             <!--payMethod-->
             <div class="form-group">
-            <label for="payMethod" class="col-sm-5 control-label input-md">Payment Method:</label>
+            <label for="payMethod" class="col-sm-5 control-label input-sm">Payment Method:</label>
               <div class="col-sm-7">
-                <select class="form-control input-md" id="payMethod">
-                  <option value="" selected disabled>Please select...</option>
+                <select class="form-control input-sm" id="payMethod">
+                  <option value="N/A" selected disabled>Please select...</option>
                   <option value="PPIO">Promise-To-Pay in Office</option>
                   <option value="MAIL">Mail In Payment</option>
                   <option value="PHONE">Pay Over Phone</option>
@@ -75,28 +75,95 @@
             </div>
             <!-- pastDue -->
             <div class="form-group">
-              <label for="pastDue" class="col-sm-5 control-label input-md">Past Due Arrangement:</label>
+              <label for="pastDue" class="col-sm-5 control-label input-sm">Past Due Arrangement:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-md" id="pastDue" placeholder="$19.95">
+                  <input type="text" class="form-control input-sm" id="pastDue" placeholder="$19.95">
                 </div>
             </div>
             <!-- currentDue -->
             <div class="form-group">
-              <label for="currentDue" class="col-sm-5 control-label input-md">Current Due Arrangement</label>
+              <label for="currentDue" class="col-sm-5 control-label input-sm">Current Due Arrangement</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-md" id="currentDue" placeholder="$19.95">
+                <input type="text" class="form-control input-sm" id="currentDue" placeholder="$19.95">
               </div>
             </div>
-
-            
-            
-            <!-- end form -->
+            <!-- acctStatus -->
+            <div class="form-group">
+              <label for="acctStatus" class="col-sm-5 control-label input-sm">Account Status:</label>
+              <div class="col-sm-7">
+                <select id="acctStatus" class="form-control input-sm">
+                  <option value="N/A" selected disabled>Please select...</option>
+                  <option value="SOF">Soft Disconnect</option>
+                  <option value="NPD">Non-Pay Disconnect</option>
+                  <option value="EQ RET">Equipment Returned</option>
+                  <option value="W-OFF">Write Off</option>
+                </select>
+              </div>
+            </div>
+            <!-- billDate -->
+            <div class="form-group">
+              <label for="billDate" class="col-sm-5 control-label input-sm">Bill Due Date:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="billDate" data-date-format="M/D/YY" / placeholder="10/31/14">
+              </div>
+            </div>
+            <!-- payOverPhone -->
+            <div class="form-group">
+              <label for="payOverPhone" class="col-sm-5 control-label input-sm">Pay Over Phone Offered?</label>
+              <div class="col-sm-7">
+                <select id="payOverPhone" class="form-control input-sm">
+                  <option value="N/A" selected disabled>Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
+              </div>
+            </div>
+            <!-- payReceived -->
+            <div class="form-group">
+              <label for="payReceived" class="col-sm-5 control-label input-sm">Payment Received:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="payReceived" placeholder="$19.95">
+              </div>
+            </div>
+            <!-- ezPay -->
+            <div class="form-group">
+              <label for="ezPay" class="col-sm-5 control-label input-sm">EZ-Pay Offered?</label>
+              <div class="col-sm-7">
+                <select id="ezPay" class="form-control input-sm">
+                  <option value="N/A" selected disabled>Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
+              </div>
+            </div>
+            <!-- collScreen -->
+            <div class="form-group">
+              <label for="collScreen" class="col-sm-5 control-label input-sm">Collections Page Noted?</label>
+              <div class="col-sm-7">
+                <select id="collScreen" class="form-control input-sm">
+                  <option value="N/A" selected disabled>Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
+              </div>
+            </div>
+            <!-- offerAssist -->
+            <div class="form-group">
+              <label for="offerAssist" class="col-sm-5 control-label input-sm">Further Assistance Offered?</label>
+              <div class="col-sm-7">
+                <select id="offerAssist" class="form-control input-sm">
+                  <option value="N/A" selected disabled>Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
+              </div>
+            </div>
+            <!-- end questions -->
             <div class="form-group col-md-offset-7" id="buttons">
               <button type="submit" id="submit-btn" class="btn btn-success btn-sm pull-right">submit</button>
               <button type="reset" id="reset-btn" class="btn btn-danger btn-sm pull-right">clear</button>
             </div>
           </form>
-          
         </div>
       </div>
       <!-- end form -->
