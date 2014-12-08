@@ -11,6 +11,9 @@ $().ready(function () {
     $("#expirationDate").datetimepicker({
       pickTime: false
     });
+    $("#billDate").datetimepicker({
+      pickTime: false
+    });
     $("#callTime").datetimepicker({
       getCurrentTime: true
     });
