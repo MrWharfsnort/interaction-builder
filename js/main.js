@@ -5,13 +5,7 @@ $().ready(function () {
 // Bootstrap DateTimePicker
 // http://eonasdan.github.io/bootstrap-datetimepicker
   $(function () {
-    $("#installDate").datetimepicker({
-      pickTime: false
-    });
-    $("#expirationDate").datetimepicker({
-      pickTime: false
-    });
-    $("#billDate").datetimepicker({
+    $("#installDate, #expirationDate, #billDate").datetimepicker({
       pickTime: false
     });
     $("#callTime").datetimepicker({
@@ -38,8 +32,7 @@ $().ready(function () {
     e.preventDefault();
 // Clicking the reset button clears all input values
 // and hides the results box
-    $("input").val('');
-    $("select").val('');
+    $("input, select").val('');
     $("#results").hide();
   });
 
