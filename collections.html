@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <title>Customer Interactions Generator</title>
   
-  <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/yeti/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/yeti/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
   <link href="css/main.css" rel="stylesheet" type="text/css">
   
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
   <script src="js/jquery.mask.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/coll.js"></script>
@@ -27,16 +27,16 @@
           <form id="generator" class="form-horizontal" role="form">
             <!--callTime-->
             <div class="form-group">
-              <label for="callTime" class="col-sm-5 control-label input-sm">Date/Time of Call?</label>
+              <label for="callTime" class="col-sm-5 control-label input-md">Date/Time of Call?</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-sm" id="callTime" data-date-format="M/D/YY h:mm A" / placeholder="10/31/14 10:31 PM">
+                <input type="text" class="form-control input-md" id="callTime" data-date-format="M/D/YY h:mm A" / placeholder="10/31/14 10:31 PM">
               </div>
             </div>
             <!--cpniVerified-->
             <div class="form-group">
-              <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verfied(?)</label>
+              <label for="cpniVerified" class="col-sm-5 control-label input-md">CPNI Verfied(?)</label>
               <div class="col-sm-7">
-                <select class="form-control input-sm" id="cpniVerified">
+                <select class="form-control input-md" id="cpniVerified">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
@@ -45,16 +45,16 @@
             </div>
             <!--callerName-->
             <div class="form-group">
-              <label for="callerName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
+              <label for="callerName" class="col-sm-5 control-label input-md">Caller's Full Name:</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-sm" id="callerName"/ placeholder="John Smith">
+                <input type="text" class="form-control input-md" id="callerName"/ placeholder="John Smith">
               </div>
             </div>
             <!--pinVerified-->
             <div class="form-group">
-              <label for="pinVerified" class="col-sm-5 control-label input-sm">Pin Verified?</label>
+              <label for="pinVerified" class="col-sm-5 control-label input-md">Pin Verified?</label>
               <div class="col-sm-7">
-                <select class="form-control input-sm" id="pinVerified">
+                <select class="form-control input-md" id="pinVerified">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
@@ -63,9 +63,9 @@
             </div>
             <!--payMethod-->
             <div class="form-group">
-            <label for="payMethod" class="col-sm-5 control-label input-sm">Payment Method:</label>
+            <label for="payMethod" class="col-sm-5 control-label input-md">Payment Method:</label>
               <div class="col-sm-7">
-                <select class="form-control input-sm" id="payMethod">
+                <select class="form-control input-md" id="payMethod">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="PPIO">Promise-To-Pay in Office</option>
                   <option value="MAIL">Mail In Payment</option>
@@ -75,23 +75,23 @@
             </div>
             <!-- pastDue -->
             <div class="form-group">
-              <label for="pastDue" class="col-sm-5 control-label input-sm">Past Due Arrangement:</label>
+              <label for="pastDue" class="col-sm-5 control-label input-md">Past Due Arrangement:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="pastDue" placeholder="$19.95">
+                  <input type="text" class="form-control input-md" id="pastDue" placeholder="$19.95">
                 </div>
             </div>
             <!-- currentDue -->
             <div class="form-group">
-              <label for="currentDue" class="col-sm-5 control-label input-sm">Current Due Arrangement</label>
+              <label for="currentDue" class="col-sm-5 control-label input-md">Current Due Arrangement</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-sm" id="currentDue" placeholder="$19.95">
+                <input type="text" class="form-control input-md" id="currentDue" placeholder="$19.95">
               </div>
             </div>
             <!-- acctStatus -->
             <div class="form-group">
-              <label for="acctStatus" class="col-sm-5 control-label input-sm">Account Status:</label>
+              <label for="acctStatus" class="col-sm-5 control-label input-md">Account Status:</label>
               <div class="col-sm-7">
-                <select id="acctStatus" class="form-control input-sm">
+                <select id="acctStatus" class="form-control input-md">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="SOF">Soft Disconnect</option>
                   <option value="NPD">Non-Pay Disconnect</option>
@@ -102,16 +102,16 @@
             </div>
             <!-- billDate -->
             <div class="form-group">
-              <label for="billDate" class="col-sm-5 control-label input-sm">Bill Due Date:</label>
+              <label for="billDate" class="col-sm-5 control-label input-md">Bill Due Date:</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-sm" id="billDate" data-date-format="M/D/YY" / placeholder="10/31/14">
+                <input type="text" class="form-control input-md" id="billDate" data-date-format="M/D/YY" / placeholder="10/31/14">
               </div>
             </div>
             <!-- payOverPhone -->
             <div class="form-group">
-              <label for="payOverPhone" class="col-sm-5 control-label input-sm">Pay Over Phone Offered?</label>
+              <label for="payOverPhone" class="col-sm-5 control-label input-md">Pay Over Phone Offered?</label>
               <div class="col-sm-7">
-                <select id="payOverPhone" class="form-control input-sm">
+                <select id="payOverPhone" class="form-control input-md">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
@@ -120,16 +120,16 @@
             </div>
             <!-- payReceived -->
             <div class="form-group">
-              <label for="payReceived" class="col-sm-5 control-label input-sm">Payment Received:</label>
+              <label for="payReceived" class="col-sm-5 control-label input-md">Payment Received:</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-sm" id="payReceived" placeholder="$19.95">
+                <input type="text" class="form-control input-md" id="payReceived" placeholder="$19.95">
               </div>
             </div>
             <!-- ezPay -->
             <div class="form-group">
-              <label for="ezPay" class="col-sm-5 control-label input-sm">EZ-Pay Offered?</label>
+              <label for="ezPay" class="col-sm-5 control-label input-md">EZ-Pay Offered?</label>
               <div class="col-sm-7">
-                <select id="ezPay" class="form-control input-sm">
+                <select id="ezPay" class="form-control input-md">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
@@ -138,9 +138,9 @@
             </div>
             <!-- collScreen -->
             <div class="form-group">
-              <label for="collScreen" class="col-sm-5 control-label input-sm">Collections Page Noted?</label>
+              <label for="collScreen" class="col-sm-5 control-label input-md">Collections Page Noted?</label>
               <div class="col-sm-7">
-                <select id="collScreen" class="form-control input-sm">
+                <select id="collScreen" class="form-control input-md">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
@@ -149,9 +149,9 @@
             </div>
             <!-- offerAssist -->
             <div class="form-group">
-              <label for="offerAssist" class="col-sm-5 control-label input-sm">Further Assistance Offered?</label>
+              <label for="offerAssist" class="col-sm-5 control-label input-md">Further Assistance Offered?</label>
               <div class="col-sm-7">
-                <select id="offerAssist" class="form-control input-sm">
+                <select id="offerAssist" class="form-control input-md">
                   <option value="N/A" selected disabled>Please select...</option>
                   <option value="YES">Yes</option>
                   <option value="NO">No</option>
