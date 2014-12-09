@@ -1,6 +1,7 @@
 // Hide the #results box on ready
 $().ready(function () {
   $("#results").hide();
+  $("input").placeholder();
 
 // Bootstrap DateTimePicker
 // http://eonasdan.github.io/bootstrap-datetimepicker
