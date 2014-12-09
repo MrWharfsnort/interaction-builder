@@ -20,10 +20,14 @@ button {
 
 label, 
 button {
-	font-weight: 900 !important;
+	font-weight: 400 !important;
 }
 
 #results {
   border: 1px solid #a9a9a9;
 	box-shadow: 3px 3px 7px #a9a9a9;
+}
+
+.navbar-brand {
+    font-weight: 900;
 }

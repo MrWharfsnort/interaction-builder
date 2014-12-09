@@ -1,7 +1,12 @@
 // Hide the #results box on ready
 $().ready(function () {
   $("#results").hide();
-  $("input").placeholder();
+
+// Enable placeholder function for IE
+// HTML5 Placeholder - https://github.com/mathiasbynens/jquery-placeholder
+  $(function() {
+       $('input, textarea').placeholder();
+  });
 
 // Bootstrap DateTimePicker
 // http://eonasdan.github.io/bootstrap-datetimepicker
