@@ -11,16 +11,11 @@ h3 {
 }
 
 .container {
-  max-width: 75%;
+  max-width: 70%;
 }
 
 button {
   margin-right: 15px;
-}
-
-label, 
-button {
-	font-weight: 400 !important;
 }
 
 #results {
@@ -28,6 +23,6 @@ button {
 	box-shadow: 3px 3px 7px #a9a9a9;
 }
 
-.navbar-brand {
-    font-weight: 900;
+.navbar-brand, .active {
+  font-weight: 900;
 }

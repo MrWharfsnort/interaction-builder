@@ -1,36 +1,23 @@
 // Hide the #results box on ready
 $().ready(function () {
   $("#results").hide();
-
-// Enable placeholder function for IE
-// HTML5 Placeholder - https://github.com/mathiasbynens/jquery-placeholder
+  
   $(function() {
-       $('input, textarea').placeholder();
-  });
-
-// Bootstrap DateTimePicker
-// http://eonasdan.github.io/bootstrap-datetimepicker
-  $(function () {
-    $("#installDate, #expirationDate, #billDate").datetimepicker({
+  // Enable placeholder function for IE
+  // HTML5 Placeholder - https://github.com/mathiasbynens/jquery-placeholder
+    $('input, textarea').placeholder();
+  // Bootstrap DateTimePicker
+  // http://eonasdan.github.io/bootstrap-datetimepicker
+    $("#installDate, #expirationDate, #billDate, #seasonalStart, #seasonalEnd, #nextHold").datetimepicker({
       pickTime: false
     });
     $("#callTime").datetimepicker({
       getCurrentTime: true
     });
-  });
-
-// jQuery MaskedInput
-// https://github.com/digitalBush/jquery.maskedinput
-// Masked Input Options:
-// 0: Only Numbers.
-// 9: Only Numbers but optional.
-// #: Only Numbers but recusive.
-// A: Numbers and Letters.
-// S: Only A-Z and a-z characters.
-  $(function () {
+  // jQuery MaskedInput
+  // https://github.com/digitalBush/jquery.maskedinput
     $("#contactNumber").mask("(999) 999-9999", {placeholder: "(___) ___-____"});
   });
-
 
 // preventDefault() disables the default function of the form button
 // more info: http://api.jquery.com/event.preventdefault/
@@ -41,5 +28,4 @@ $().ready(function () {
     $("input, select").val('');
     $("#results").hide();
   });
-
 });
