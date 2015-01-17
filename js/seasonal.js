@@ -1,18 +1,3 @@
-// $$$$ - SEASONAL MACRO - $$$$
-// * CPNI : Y/N
-// * CALLER'S FULL NAME : JOHN SMITH
-// * ADD/REM SEASONAL : ADD/REM
-// * QUALIFIED FOR SEASONAL? : Y/N
-// * SEASONAL DURATION : 6MO
-// * SEASONAL START DATE: 11/11/11
-// * SEASONAL END DATE : 11/11/11
-// * REGULAR MONTHLY RATE : $10
-// * SEASONAL MONTHLY RATE : $45
-// * NEXT QUALIFIED SEASONAL HOLD: 11/11/11
-// * FORWARDING ADDRESS: Y/N
-// * REASON FOR SEASONAL HOLD/REM: 
-// * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 $().ready(function () {
   $("#submit-btn").click(function (e) {
     e.preventDefault();
@@ -31,23 +16,21 @@ $().ready(function () {
     var forwardingAddress = $("#forwardingAddress").val();
     var reasonForHold = $("#reasonForHold").val().toUpperCase();
 
-    var cc1 = "* -- $$$$ - SEASONAL MACRO - $$$$ --\n";
-    var cc2 = "* CPNI VERIFIED: " + cpniVerified + "\n";
-    var cc3 = "* CALLER'S FULL NAME: " + callerName + "\n";
-    var cc4 = "* ADD/REM SEASONAL: " + addRemSeasonal + "\n";
-    var cc5 = "* QUALIFIED FOR SEASONAL?: " + seasonalQualified + "\n";
-    var cc6 = "* SEASONAL DURATION: " + seasonalDuration + "\n";
-    var cc7 = "* SEASONAL START DATE: " + seasonalStart + "\n";
-    var cc8 = "* SEASONAL END DATE: " + seasonalEnd + "\n";
-    var cc9 = "* REGULAR MONTHLY RATE: " + regularRate + "\n";
-    var cc10 = "* SEASONAL MONTHLY RATE: " + monthlyRate + "\n";
-    var cc11 = "* NEXT QUALIFIED SEASONAL HOLD: " + nextHold + "\n";
-    var cc12 = "* FORWARDING ADDRESS: " + forwardingAddress + "\n";
-    var cc13 = "* REASON FOR SEASONAL: " + reasonForHold + "\n";
-    var cc14 = "* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+    var cc1 = "CPNI VERIFIED: " + cpniVerified;
+    var cc2 = "CALLER'S FULL NAME: " + callerName;
+    var cc3 = "ADD/REM SEASONAL: " + addRemSeasonal;
+    var cc4 = "QUALIFIED FOR SEASONAL?: " + seasonalQualified;
+    var cc5 = "SEASONAL DURATION: " + seasonalDuration;
+    var cc6 = "SEASONAL START DATE: " + seasonalStart;
+    var cc7 = "SEASONAL END DATE: " + seasonalEnd;
+    var cc8 = "REGULAR MONTHLY RATE: " + regularRate;
+    var cc9 = "SEASONAL MONTHLY RATE: " + monthlyRate;
+    var cc10 = "NEXT QUALIFIED SEASONAL HOLD: " + nextHold;
+    var cc11 = "FORWARDING ADDRESS: " + forwardingAddress;
+    var cc12 = "REASON FOR SEASONAL: " + reasonForHold;
 
-    $("#results").empty().text(cc1 + cc2 + cc3 + cc4 + cc5 + cc6 +
-      cc7 + cc8 + cc9 + cc10 + cc11 + cc12 + cc13 + cc14);
+    $("#results").empty().html(cc1 +", "+ cc2 +", "+ cc3 +", "+ cc4 +", "+ cc5 +", "+
+    cc6 +", "+ cc7 +", "+ cc8 +", "+ cc9 +", "+ cc10 +", "+ cc11 +", "+ cc12);
   });
 
 });
