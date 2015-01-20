@@ -11,7 +11,8 @@ h3 {
 }
 
 .container {
-  max-width: 70%;
+  max-width: 85%;
+  min-width: 75%;
 }
 
 button {
@@ -28,6 +29,10 @@ button {
 
 .navbar-brand, .active {
   font-weight: 900;
+}
+
+.placeholder {
+  color: #d9d9d9;
 }
 
 .form-control::-webkit-input-placeholder {
