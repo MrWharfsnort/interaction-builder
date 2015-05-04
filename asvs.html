@@ -17,7 +17,8 @@
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.placeholder.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/asvs.js"></script>
+    <!--<script src="js/asvs.js"></script>-->
+    <script src="js/generator.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,9 +27,9 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-      <a class="navbar-brand" href="index.html">Customer Interactions Generator</a>
+      <!--<a class="navbar-brand" href="index.html">Customer Interactions Generator</a>-->
         <ul class="nav navbar-nav">
           <li role="presentation"><a href="sales.html">Sales</a></li>
           <li role="presentation" class="active"><a href="asvs.html">Account Services</a></li>
@@ -49,8 +50,8 @@
               <div class="form-group">
                 <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
                 <div class="col-sm-7">
-                  <select id="cpniVerified" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="cpniVerified" name="CPNI Verified" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -60,15 +61,15 @@
               <div class="form-group">
                 <label for="callerName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
                 <div class="col-sm-7">
-                  <input type="text" id="callerName" class="form-control input-sm" placeholder="Enter caller's name..">
+                  <input type="text" id="callerName" name="Caller's Name" class="form-control input-sm" placeholder="Enter caller's name..">
                 </div>
               </div>
               <!--aeaPlan-->
               <div class="form-group">
                 <label for="aeaPlan" class="col-sm-5 control-label input-sm">AEA/Reassurance Plan?</label>
                 <div class="col-sm-7">
-                  <select id="aeaPlan" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="aeaPlan" name="AEA Plan" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -78,8 +79,8 @@
               <div class="form-group">
                 <label for="csEducate" class="col-sm-5 control-label input-sm">CS and Educate?</label>
                 <div class="col-sm-7">
-                  <select id="csEducate" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="csEducate" name="CS and Educate" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -89,8 +90,8 @@
               <div class="form-group">
                 <label for="salesQuestion" class="col-sm-5 control-label input-sm">Sales Question?</label>
                 <div class="col-sm-7">
-                  <select id="salesQuestion" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="salesQuestion" name="Sales Question" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -100,8 +101,8 @@
               <div class="form-group">
                 <label for="mentionPhone" class="col-sm-5 control-label input-sm">Mention Phone?</label>
                 <div class="col-sm-7">
-                  <select id="mentionPhone" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="mentionPhone" name="Mentioned Phone" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -111,8 +112,8 @@
               <div class="form-group">
                 <label for="summarizeDate" class="col-sm-5 control-label input-sm">Summarize Due Date & Amount?</label>
                 <div class="col-sm-7">
-                  <select id="summarizeDate" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="summarizeDate" name="Due date summarized" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -122,8 +123,8 @@
               <div class="form-group">
                 <label for="dispositionCall" class="col-sm-5 control-label input-sm">Disposition Call?</label>
                 <div class="col-sm-7">
-                  <select id="dispositionCall" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="dispositionCall" name="Call dispositioned" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -133,8 +134,8 @@
               <div class="form-group">
                 <label for="askforEmail" class="col-sm-5 control-label input-sm">Ask for Email Address?</label>
                 <div class="col-sm-7">
-                  <select id="askforEmail" class="form-control input-sm">
-                    <option value="" selected disabled>Please select..</option>
+                  <select id="askforEmail" name="Asked for email address" class="form-control input-sm">
+                    <option value="" selected="selected" disabled="disabled">Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
@@ -142,8 +143,8 @@
               </div>
               <!-- end questionaire -->
               <div class="form-group col-md-offset-7" id="buttons">
-                <button type="submit" id="submit-btn" class="btn btn-success btn-sm pull-right">submit</button>
-                <button type="reset" id="reset-btn" class="btn btn-danger btn-sm pull-right">clear</button>
+                <button type="submit" id="submitBtn" class="btn btn-success btn-sm pull-right">submit</button>
+                <button type="reset" id="resetBtn" class="btn btn-danger btn-sm pull-right">clear</button>
               </div>
             </form>
           </div>
@@ -151,7 +152,9 @@
         <!-- end form -->
         <!-- begin results -->
         <div class="col-md-5">
-          <div id="results"></div>
+          <div class="container-fluid" id="resultContainer">
+            <textarea class="form-control" rows="5" id="results"></textarea>
+          </div>
         </div>
         <!-- end results -->
       </div>

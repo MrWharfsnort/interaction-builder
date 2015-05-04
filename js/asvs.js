@@ -1,4 +1,4 @@
-$().ready(function () {
+$(function () {
   $("#submit-btn").click(function (e) {
     e.preventDefault();
     $("#results").show();
