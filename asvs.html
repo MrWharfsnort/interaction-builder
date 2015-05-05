@@ -5,22 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Customer Interactions Generator - Account Services</title>
-    <!--css-->
+
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" type="text/css" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <!--js scripts-->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.placeholder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.js"></script>
     <script src="js/main.js"></script>
-    <!--<script src="js/asvs.js"></script>-->
-    <script src="js/generator.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -29,7 +28,6 @@
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-      <!--<a class="navbar-brand" href="index.html">Customer Interactions Generator</a>-->
         <ul class="nav navbar-nav">
           <li role="presentation"><a href="sales.html">Sales</a></li>
           <li role="presentation" class="active"><a href="asvs.html">Account Services</a></li>
@@ -40,124 +38,134 @@
       </div>
     </nav>
     <div class="container">
-      <div class="row">
-        <!-- begin form -->
-        <div class="col-md-7">
-          <div class="form-group">
-            <form id="generator" class="form-horizontal" role="form">
-              <!--begin questionaire-->
-              <!--cpniVerified-->
-              <div class="form-group">
-                <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
-                <div class="col-sm-7">
-                  <select id="cpniVerified" name="CPNI Verified" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+      <div class="col-md-7">
+        <div class="form-group">
+          <form id="generator" class="form-horizontal" role="form">
+
+            <!--cpniVerified-->
+            <div class="form-group">
+              <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
+              <div class="col-sm-7">
+                <select id="cpniVerified" name="CPNI Verified" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--callerName-->
-              <div class="form-group">
-                <label for="callerName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
-                <div class="col-sm-7">
-                  <input type="text" id="callerName" name="Caller's Name" class="form-control input-sm" placeholder="Enter caller's name..">
-                </div>
+            </div>
+
+            <!--callerName-->
+            <div class="form-group">
+              <label for="callerName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
+              <div class="col-sm-7">
+                <input type="text" id="callerName" name="Caller's Name" class="form-control input-sm" placeholder="Enter caller's name..">
               </div>
-              <!--aeaPlan-->
-              <div class="form-group">
-                <label for="aeaPlan" class="col-sm-5 control-label input-sm">AEA/Reassurance Plan?</label>
-                <div class="col-sm-7">
-                  <select id="aeaPlan" name="AEA Plan" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--askforEmail-->
+            <div class="form-group">
+              <label for="askforEmail" class="col-sm-5 control-label input-sm">Ask for Email Address?</label>
+              <div class="col-sm-7">
+                <select id="askforEmail" name="Asked for email address" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--csEducate-->
-              <div class="form-group">
-                <label for="csEducate" class="col-sm-5 control-label input-sm">CS and Educate?</label>
-                <div class="col-sm-7">
-                  <select id="csEducate" name="CS and Educate" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--aeaPlan-->
+            <div class="form-group">
+              <label for="aeaPlan" class="col-sm-5 control-label input-sm">AEA/Reassurance Plan?</label>
+              <div class="col-sm-7">
+                <select id="aeaPlan" name="AEA Plan" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--salesQuestion-->
-              <div class="form-group">
-                <label for="salesQuestion" class="col-sm-5 control-label input-sm">Sales Question?</label>
-                <div class="col-sm-7">
-                  <select id="salesQuestion" name="Sales Question" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--csEducate-->
+            <div class="form-group">
+              <label for="csEducate" class="col-sm-5 control-label input-sm">CS and Educate?</label>
+              <div class="col-sm-7">
+                <select id="csEducate" name="CS and Educate" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--mentionPhone-->
-              <div class="form-group">
-                <label for="mentionPhone" class="col-sm-5 control-label input-sm">Mention Phone?</label>
-                <div class="col-sm-7">
-                  <select id="mentionPhone" name="Mentioned Phone" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--salesQuestion-->
+            <div class="form-group">
+              <label for="salesQuestion" class="col-sm-5 control-label input-sm">Sales Question?</label>
+              <div class="col-sm-7">
+                <select id="salesQuestion" name="Sales Question" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--summarizeDate-->
-              <div class="form-group">
-                <label for="summarizeDate" class="col-sm-5 control-label input-sm">Summarize Due Date & Amount?</label>
-                <div class="col-sm-7">
-                  <select id="summarizeDate" name="Due date summarized" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--mentionPhone-->
+            <div class="form-group">
+              <label for="mentionPhone" class="col-sm-5 control-label input-sm">Mention Phone?</label>
+              <div class="col-sm-7">
+                <select id="mentionPhone" name="Mentioned Phone" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--dispositionCall-->
-              <div class="form-group">
-                <label for="dispositionCall" class="col-sm-5 control-label input-sm">Disposition Call?</label>
-                <div class="col-sm-7">
-                  <select id="dispositionCall" name="Call dispositioned" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--summarizeDate-->
+            <div class="form-group">
+              <label for="summarizeDate" class="col-sm-5 control-label input-sm">Summarize Due Date & Amount?</label>
+              <div class="col-sm-7">
+                <select id="summarizeDate" name="Due date summarized" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!--askforEmail-->
-              <div class="form-group">
-                <label for="askforEmail" class="col-sm-5 control-label input-sm">Ask for Email Address?</label>
-                <div class="col-sm-7">
-                  <select id="askforEmail" name="Asked for email address" class="form-control input-sm">
-                    <option value="" selected="selected" disabled="disabled">Please select..</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+
+            <!--dispositionCall-->
+            <div class="form-group">
+              <label for="dispositionCall" class="col-sm-5 control-label input-sm">Disposition Call?</label>
+              <div class="col-sm-7">
+                <select id="dispositionCall" name="Call dispositioned" class="form-control input-sm">
+                  <option value="" selected="selected" disabled="disabled">Please select..</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!-- end questionaire -->
-              <div class="form-group col-md-offset-7" id="buttons">
-                <button type="submit" id="submitBtn" class="btn btn-success btn-sm pull-right">submit</button>
-                <button type="reset" id="resetBtn" class="btn btn-danger btn-sm pull-right">clear</button>
+            </div>
+
+            <!--buttons-->
+            <div class="form-group" id="buttons">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submitBtn" class="btn btn-success pull-right">submit</button>
+                <button type="reset" id="resetBtn" class="btn btn-danger pull-right">clear</button>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
-        <!-- end form -->
-        <!-- begin results -->
-        <div class="col-md-5">
-          <div class="container-fluid" id="resultContainer">
-            <textarea class="form-control" rows="5" id="results"></textarea>
-          </div>
-        </div>
-        <!-- end results -->
       </div>
+
+      <div class="col-md-5">
+        <div class="container-fluid" id="resultContainer">
+          <textarea class="form-control" rows="8" id="results" readonly></textarea>
+          <div class="form-group text-center">
+            <button class="btn btn-primary" id="copyBtn" data-clipboard-target="results">copy to clipboard</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
