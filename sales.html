@@ -4,157 +4,175 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Customer Interactions Generator - Account Services</title>
-    <!--css-->
+    <title>Customer Interactions Generator - Sales</title>
+
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" type="text/css" />
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <!--scripts-->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.placeholder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/sales.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-    <!--<a class="navbar-brand" href="index.html">Customer Interactions Generator</a>-->
-      <ul class="nav navbar-nav">
-        <li role="presentation" class="active"><a href="#">Sales</a></li>
-        <li role="presentation"><a href="asvs.html">Account Services</a></li>
-        <li role="presentation"><a href="seasonal.html">Seasonal Disconnect</a></li>
-        <li role="presentation"><a href="collections.html">Collections</a></li>
-        <li role="presentation"><a href="saves.html">Retention</a></li>
-      </ul>
-    </div>
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li role="presentation" class="active"><a href="sales.html">Sales</a></li>
+          <li role="presentation"><a href="asvs.html">Account Services</a></li>
+          <li role="presentation"><a href="seasonal.html">Seasonal Disconnect</a></li>
+          <li role="presentation"><a href="collections.html">Collections</a></li>
+          <li role="presentation"><a href="saves.html">Retention</a></li>
+        </ul>
+      </div>
     </nav>
+    
     <div class="container">
-      <div class="row">
-        <!-- begin form -->
-        <div class="col-sm-7">
-          <div class="form-group">
-            <form id="generator" class="form-horizontal" role="form">
-              <!-- CPNI Y/N -->
-              <div class="form-group">
-                <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
-                <div class="col-sm-7">
-                  <select class="form-control input-sm" id="cpniVerified">
-                    <option value="" selected disabled>Please select...</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+      <div class="col-md-7">
+        <div class="form-group">
+          <form id="generator" class="form-horizontal" role="form">
+            
+            <!-- CPNI Y/N -->
+            <div class="form-group">
+              <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
+              <div class="col-sm-7">
+                <select class="form-control input-sm" id="cpniVerified" name="CPNI Verified">
+                  <option value="" selected="selected" disabled="disabled">Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!-- CALLER'S FULL NAME -->
-              <div class="form-group">
-                <label for="custName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="custName" placeholder="Enter caller's name..">
-                </div>
+            </div>
+            
+            <!-- CALLER'S FULL NAME -->
+            <div class="form-group">
+              <label for="custName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="custName" placeholder="Enter caller's name.." name="Caller's Full Name">
               </div>
-              <!-- PERMISSION TO RUN CREDIT CHECK - Y/N -->
-              <div class="form-group">
-                <label for="creditCheck" class="col-sm-5 control-label input-sm">Credit Check Permitted?</label>
-                <div class="col-sm-7">
-                  <select class="form-control input-sm" id="creditCheck">
-                    <option value="" selected disabled>Please select...</option>
-                    <option value="YES">Yes</option>
-                    <option value="NO">No</option>
-                  </select>
-                </div>
+            </div>
+            
+            <!-- PERMISSION TO RUN CREDIT CHECK - Y/N -->
+            <div class="form-group">
+              <label for="creditCheck" class="col-sm-5 control-label input-sm">Credit Check Permitted?</label>
+              <div class="col-sm-7">
+                <select class="form-control input-sm" id="creditCheck" name="Credit Check Permitted">
+                  <option value="" selected="selected" disabled="disabled">Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
               </div>
-              <!-- *1ST BILL W/PRORATE (COD) -->
-              <div class="form-group">
-                <label for="firstBill" class="col-sm-5 control-label input-sm">First Bill w/ Prorate:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="firstBill" placeholder="$">
-                </div>
+            </div>
+            
+            <!-- *1ST BILL W/PRORATE (COD) -->
+            <div class="form-group">
+              <label for="firstBill" class="col-sm-5 control-label input-sm">First Bill w/ Prorate:</label>
+              <div class="col-sm-7">
+                <input type="text" data-prefix="$" class="form-control input-sm" id="firstBill" placeholder="$" name="First Bill w/ Prorate">
               </div>
-              <!-- MONTHLY SERVICE -->
-              <div class="form-group">
-                <label for="monthlyService" class="col-sm-5 control-label input-sm">Monthly Service Rate:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="monthlyService" placeholder="$">
-                </div>
+            </div>
+            
+            <!-- MONTHLY SERVICE -->
+            <div class="form-group">
+              <label for="monthlyService" class="col-sm-5 control-label input-sm">Monthly Service Rate:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="monthlyService" placeholder="$" name="Monthly Service Rate">
               </div>
-              <!-- DEPOSIT AMOUNT -->
-              <div class="form-group">
-                <label for="depositAmount" class="col-sm-5 control-label input-sm">Deposit Amount:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="depositAmount" placeholder="$">
-                </div>
+            </div>
+            
+            <!-- DEPOSIT AMOUNT -->
+            <div class="form-group">
+              <label for="depositAmount" class="col-sm-5 control-label input-sm">Deposit Amount:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="depositAmount" placeholder="$" name="Deposit Amount">
               </div>
-              <!-- INSTALL AMOUNT -->
-              <div class="form-group">
-                <label for="installAmount" class="col-sm-5 control-label input-sm">Install Amount:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="installAmount" placeholder="$">
-                </div>
+            </div>
+            
+            <!-- INSTALL AMOUNT -->
+            <div class="form-group">
+              <label for="installAmount" class="col-sm-5 control-label input-sm">Install Amount:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="installAmount" placeholder="$" name="Install Amount">
               </div>
-              <!-- EQUIPMENT FEES -->
-              <div class="form-group">
-                <label for="equipmentFees" class="col-sm-5 control-label input-sm">Equipment Fees:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="equipmentFees" placeholder="$">
-                </div>
+            </div>
+            
+            <!-- EQUIPMENT FEES -->
+            <div class="form-group">
+              <label for="equipmentFees" class="col-sm-5 control-label input-sm">Equipment Fees:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="equipmentFees" placeholder="$" name="Equipment Fees">
               </div>
-              <!-- CAMPAIGN/PACKAGE EXP DATE -->
-              <div class="form-group">
-                <label for="expirationDate" class="col-sm-5 control-label input-sm">Package/Campaign Expiration:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="expirationDate" data-date-format="M/D/YY" placeholder="11/11/11">
-                </div>
+            </div>
+            
+            <!-- CAMPAIGN/PACKAGE EXP DATE -->
+            <div class="form-group">
+              <label for="expirationDate" class="col-sm-5 control-label input-sm">Package/Campaign Expiration:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="expirationDate" data-date-format="M/D/YY" placeholder="11/11/11" name="Package/Campaign Expiration">
               </div>
-              <!-- PRO INSTALL / EXPRESS CONNECT -->
-              <div class="form-group">
-                <label for="installType" class="col-sm-5 control-label input-sm">Installation Type:</label>
-                <div class="col-sm-7">
-                  <select class="form-control input-sm" id="installType">
-                    <option value="" selected disabled>Please select...</option>
-                    <option value="PRO INSTALL">Professional Installation</option>
-                    <option value="EXPRESS CONNECT">Express Connect</option>
-                  </select>
-                </div>
+            </div>
+            
+            <!-- PRO INSTALL / EXPRESS CONNECT -->
+            <div class="form-group">
+              <label for="installType" class="col-sm-5 control-label input-sm">Installation Type:</label>
+              <div class="col-sm-7">
+                <select class="form-control input-sm" id="installType" name="Installation Type">
+                  <option value="" selected="selected" disabled="disabled">Please select...</option>
+                  <option value="PRO INSTALL">Professional Installation</option>
+                  <option value="EXPRESS CONNECT">Express Connect</option>
+                </select>
               </div>
-              <!-- CTM # -->
-              <div class="form-group">
-                <label for="contactNumber" class="col-sm-5 control-label input-sm">Call-to-Meet Number:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="contactNumber" placeholder="555-867-5309">
-                </div>
+            </div>
+            
+            <!-- CTM # -->
+            <div class="form-group">
+              <label for="contactNumber" class="col-sm-5 control-label input-sm">Call-to-Meet Number:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="contactNumber" placeholder="555-867-5309" name="Call-to-Meet Number">
               </div>
-              <!-- INSTALL DATE & TIME -->
-              <div class="form-group">
-                <label for="installDate" class="col-sm-5 control-label input-sm">Install Date:</label>
-                <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="installDate" data-date-format="M/D/YY" placeholder="11/11/11">
-                </div>
+            </div>
+            
+            <!-- INSTALL DATE & TIME -->
+            <div class="form-group">
+              <label for="installDate" class="col-sm-5 control-label input-sm">Install Date:</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control input-sm" id="installDate" data-date-format="M/D/YY" placeholder="11/11/11" name="Install Date">
               </div>
-              <!-- end form -->
-              <div class="form-group col-md-offset-7" id="buttons">
-                <button type="submit" id="submit-btn" class="btn btn-success btn-sm pull-right">submit</button>
-                <button type="reset" id="reset-btn" class="btn btn-danger btn-sm pull-right">clear</button>
+            </div>
+            
+            <!--buttons-->
+            <div class="form-group" id="buttons">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submitBtn" class="btn btn-success pull-right">submit</button>
+                <button type="reset" id="resetBtn" class="btn btn-danger pull-right">clear</button>
               </div>
-            </form>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="container-fluid" id="resultContainer">
+          <textarea class="form-control" rows="8" id="results" readonly></textarea>
+          <div class="form-group text-center">
+
+            <button class="btn btn-primary" id="copyBtn" data-clipboard-target="results">copy to clipboard</button>
           </div>
         </div>
-        <!-- end form -->
-        <!-- begin results -->
-        <div class="col-sm-5">
-          <div id="results"></div>
-        </div>
-        <!-- end results -->
       </div>
+      
     </div>
   </body>
 </html>
