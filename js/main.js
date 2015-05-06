@@ -2,7 +2,9 @@
 $(function () {
   $('#resultContainer, :disabled').hide();
 
-  $('input, textarea').placeholder(); // HTML5 Placeholder - https://github.com/mathiasbynens/jquery-placeholder
+  // HTML5 Placeholder - https://github.com/mathiasbynens/jquery-placeholder
+  $('input, textarea').placeholder();
+
 
   // http://eonasdan.github.io/bootstrap-datetimepicker
   $('#installDate, #expirationDate, #billDate, #seasonalStart, #seasonalEnd, #nextHold, #discoDate').datetimepicker({
