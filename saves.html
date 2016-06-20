@@ -4,31 +4,32 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Customer Interactions Generator - Account Services</title>
-    <!--css-->
+    <title>Customer Interactions Generator - Retention</title>
+
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/spacelab/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
-    <!--js scripts-->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.placeholder.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/saves.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-      <a class="navbar-brand" href="index.html">Customer Interactions Generator</a>
         <ul class="nav navbar-nav">
           <li role="presentation"><a href="sales.html">Sales</a></li>
           <li role="presentation"><a href="asvs.html">Account Services</a></li>
@@ -36,95 +37,104 @@
           <li role="presentation"><a href="collections.html">Collections</a></li>
           <li role="presentation" class="active"><a href="saves.html">Retention</a></li>
         </ul>
+        <a href="https://bitbucket.org/mrwharfsnort/interaction-builder/issues/new" target="new" class="btn btn-primary navbar-right navbar-btn"><i class="fa fa-question-circle"></i></a>
       </div>
     </nav>
+
     <div class="container">
-      <div class="row">
-        <!-- begin form -->
-        <div class="col-md-7">
-          <div class="form-group">
-            <form id="generator" class="form-horizontal" role="form">
-              <!--begin questionaire-->
+      <div class="col-md-7">
+        <div class="form-group">
+          <form id="generator" class="form-horizontal" role="form">
+
               <!--cpniVerified-->
               <div class="form-group">
                 <label for="cpniVerified" class="col-sm-5 control-label input-sm">CPNI Verified?</label>
                 <div class="col-sm-7">
-                  <select id="cpniVerified" class="form-control input-sm">
+                  <select id="cpniVerified" class="form-control input-sm" name="CPNI Verified">
                     <option value="" selected disabled>Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
                 </div>
               </div>
+
               <!--callerName-->
               <div class="form-group">
                 <label for="callerName" class="col-sm-5 control-label input-sm">Caller's Full Name:</label>
                 <div class="col-sm-7">
-                  <input type="text" id="callerName" class="form-control input-sm" placeholder="Enter caller's name..">
+                  <input type="text" id="callerName" class="form-control input-sm" placeholder="Enter caller's name.." name="Caller's Full Name">
                 </div>
               </div>
+
               <!--discoReason-->
               <div class="form-group">
                 <label for="discoReason" class="col-sm-5 control-label input-sm">Reason for Disconnect:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="discoReason" placeholder="Enter disconnect reason..">
+                  <input type="text" class="form-control input-sm" id="discoReason" placeholder="Enter disconnect reason.." name="Reason for Disconnect">
                 </div>
               </div>
+
               <!--customerSaved-->
               <div class="form-group">
                 <label for="customerSaved" class="col-sm-5 control-label input-sm">Was Customer Saved?</label>
                 <div class="col-sm-7">
-                  <select id="customerSaved" class="form-control input-sm">
+                  <select id="customerSaved" class="form-control input-sm" name="Customer Saved">
                     <option value="" selected disabled>Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
                 </div>
               </div>
+
               <!--curBalance-->
               <div class="form-group">
                 <label for="curBalance" class="col-sm-5 control-label input-sm">Current Monthly Balance:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="curBalance" placeholder="$">
+                  <input type="text" class="form-control input-sm" id="curBalance" placeholder="$" name="Current Monthly Balance">
                 </div>
               </div>
+
               <!--nextRate-->
               <div class="form-group">
                 <label for="nextRate" class="col-sm-5 control-label input-sm">Next Monthly Rate:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="nextRate" placeholder="$">
+                  <input type="text" class="form-control input-sm" id="nextRate" placeholder="$" name="Next Monthly Rate">
                 </div>
               </div>
+
               <!--fwdAddress-->
               <div class="form-group">
                 <label for="fwdAddress" class="col-sm-5 control-label input-sm">Forwarding Address:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="fwdAddress" placeholder="555 Jackson Ave, Anywhere, ST  55555">
+                  <input type="text" class="form-control input-sm" id="fwdAddress" placeholder="555 Jackson Ave, Anywhere, ST  55555" name="Forwarding Address">
                 </div>
               </div>
+
               <!--cableMovers-->
               <div class="form-group">
                 <label for="cableMovers" class="col-sm-5 control-label input-sm">Cable Movers:</label>
                 <div class="col-sm-7">
-                  <select id="cableMovers" class="form-control input-sm">
+                  <select id="cableMovers" class="form-control input-sm" name="Cable Movers">
                     <option value="" selected disabled>Please select..</option>
                     <option value="YES">Yes</option>
                     <option value="NO">No</option>
                   </select>
                 </div>
               </div>
+
               <!--discoDate-->
               <div class="form-group">
                 <label for="discoDate" class="col-sm-5 control-label input-sm">Disconnect Date:</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control input-sm" id="discoDate" data-date-format="M/D/YY" placeholder="11/11/11">
+                  <input type="text" class="form-control input-sm" id="discoDate" data-date-format="M/D/YY" placeholder="11/11/11" name="Disconnect Date">
                 </div>
               </div>
+
               <!--saveMethod-->
               <div class="form-group">
                 <label for="saveMethod" class="col-sm-5 control-label input-sm">Save Method:</label>
                 <div class="col-sm-7">
-                  <select id="saveMethod" class="form-control input-sm">
+                  <select id="saveMethod" class="form-control input-sm" name="Save Method">
                     <option value="" selected disabled>Please select..</option>
                     <option value="REBUNDLED/REPACKAGE">Rebundled/Repackaged</option>
                     <option value="DOWNGRADE">Downgrade</option>
@@ -134,21 +144,27 @@
                   </select>
                 </div>
               </div>
-              <!-- end questionaire -->
-              <div class="form-group col-md-offset-7" id="buttons">
-                <button type="submit" id="submit-btn" class="btn btn-success btn-sm pull-right">submit</button>
-                <button type="reset" id="reset-btn" class="btn btn-danger btn-sm pull-right">clear</button>
+
+            <!--buttons-->
+            <div class="form-group" id="buttons">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submitBtn" class="btn btn-success pull-right">submit</button>
+                <button type="reset" id="resetBtn" class="btn btn-danger pull-right">clear</button>
               </div>
-            </form>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="container-fluid" id="resultContainer">
+          <textarea class="form-control" rows="8" id="results" readonly></textarea>
+          <div class="form-group text-center">
+            <button class="btn btn-primary" id="copyBtn" data-clipboard-target="results">copy to clipboard</button>
           </div>
         </div>
-        <!-- end form -->
-        <!-- begin results -->
-        <div class="col-md-5">
-          <div id="results"></div>
-        </div>
-        <!-- end results -->
       </div>
+
     </div>
   </body>
 </html>
