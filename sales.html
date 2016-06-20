@@ -78,6 +78,33 @@
               </div>
             </div>
 
+            <!--  CREDIT CLASS -->
+            <div class="form-group">
+             <label for="creditClass" class="col-sm-5 control-label input-sm">Credit Class:</label>
+             <div class="col-sm-7">
+                <select class="form-control input-sm" id="creditClass" name="Credit Class">
+                  <option value="" selected="selected" disabled="disabled">Please select...</option>
+                  <option value="G">G</option>
+                  <option value="H">H</option>
+                  <option value="I">I</option>
+                  <option value="J">J</option>
+                  <option value="REFUSED">Refused</option>
+                </select>
+             </div>
+            </div>
+
+            <!-- ID REQUIRED -->
+            <div class="form-group">
+             <label for="idRequired" class="col-sm-5 control-label input-sm">ID Required?</label>
+             <div class="col-sm-7">
+                <select class="form-control input-sm" id="idRequired" name="ID Required">
+                  <option value="" selected="selected" disabled="disabled">Please select...</option>
+                  <option value="YES">Yes</option>
+                  <option value="NO">No</option>
+                </select>
+             </div>
+            </div>
+            
             <!-- *1ST BILL W/PRORATE (COD) -->
             <div class="form-group">
               <label for="firstBill" class="col-sm-5 control-label input-sm">First Bill w/ Prorate:</label>
@@ -94,13 +121,15 @@
               </div>
             </div>
 
-            <!-- DEPOSIT AMOUNT -->
+            <!-- ACTIVATION FEE AMOUNT -->
             <div class="form-group">
-              <label for="depositAmount" class="col-sm-5 control-label input-sm">Deposit Amount:</label>
+              <label for="activationFee" class="col-sm-5 control-label input-sm">Activation Fee Amount:</label>
               <div class="col-sm-7">
-                <input type="text" class="form-control input-sm" id="depositAmount" placeholder="$" name="Deposit Amount">
+                <input type="text" class="form-control input-sm" id="activationFee" placeholder="$" name="Activation Fee Amount">
               </div>
             </div>
+
+            <!-- ID REQUIRED -->
 
             <!-- INSTALL AMOUNT -->
             <div class="form-group">
@@ -153,7 +182,7 @@
                 <input type="text" class="form-control input-sm" id="installDate" data-date-format="M/D/YY" placeholder="11/11/11" name="Install Date">
               </div>
             </div>
-            
+
             <!--TRACKING NUMBER-->
             <div class="form-group">
               <label for="trackingNumber" class="col-sm-5 control-label input-sm">Tracking Number:</label>
@@ -161,8 +190,8 @@
                 <input type="text" class="form-control input-sm" id="trackingNumber" placeholder="75501388" name="Tracking Number">
               </div>
             </div>
-            
-            
+
+
 
             <!--buttons-->
             <div class="form-group" id="buttons">
