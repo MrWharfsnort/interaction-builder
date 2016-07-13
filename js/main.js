@@ -48,20 +48,22 @@ $(function () {
     $('#resultContainer').hide();
   });
 
-  // zeroclipboard config
-  var client = new ZeroClipboard( $('#copyBtn'), {
-    moviePath: 'js/ZeroClipboard.swf'
-  });
+  var clipboard = new Clipboard('#copyBtn');
 
-  client.on('copy', function() {
+  clipboard.on('success', function(e) {
+    // change copy button text to 'copied!'
     $('#copyBtn').text('copied!').addClass('btn-success has-success');
-  });
 
-  client.on('aftercopy', function() {
+    // change it back to 'copy to clipboard'
     setTimeout(function() {
       $('#copyBtn').text('copy to clipboard').removeClass('btn-success has-success');
     }, 200);
+
+    // flash the results box to indicate action was taken
     $('#results').effect('highlight', 200);
-  });
+
+    // clear the selection
+    e.clearSelection();
+  })
 
 });
