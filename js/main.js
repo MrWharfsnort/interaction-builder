@@ -5,7 +5,6 @@ $(function () {
   // HTML5 Placeholder - https://github.com/mathiasbynens/jquery-placeholder
   $('input, textarea').placeholder();
 
-
   // http://eonasdan.github.io/bootstrap-datetimepicker
   $('#installDate, #expirationDate, #billDate, #seasonalStart, #seasonalEnd, #nextHold, #discoDate').datetimepicker({
     pickTime: false
@@ -24,7 +23,7 @@ $(function () {
 
     $.each(formData, function(i, field) {
       if (!field.value) {
-        this.value = 'n/a';
+        this.value = '';
       } else {
         var fieldValues = field.name + ': ' + field.value + ',  ';
         $('#results').append(fieldValues);
@@ -48,20 +47,31 @@ $(function () {
     $('#resultContainer').hide();
   });
 
-  // zeroclipboard config
-  var client = new ZeroClipboard( $('#copyBtn'), {
-    moviePath: 'js/ZeroClipboard.swf'
-  });
+  var clipboard = new Clipboard('#copyBtn');
 
-  client.on('copy', function() {
-    $('#copyBtn').text('copied!').addClass('btn-success has-success');
-  });
+  clipboard.on('success', function(e) {
+    // change copy button text to 'copied!'
+    $('#copyBtn')
+      .text('copied!')
+      .addClass('btn-success has-success');
 
-  client.on('aftercopy', function() {
+    // change it back to 'copy to clipboard'
     setTimeout(function() {
-      $('#copyBtn').text('copy to clipboard').removeClass('btn-success has-success');
+      $('#copyBtn')
+        .text('copy to clipboard')
+        .removeClass('btn-success has-success');
     }, 200);
+
+    // flash the results box to indicate action was taken
     $('#results').effect('highlight', 200);
+
+    // clear the selection
+    e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+    console.error('Action: ', e.action);
+    console.error('Trigger: ', e.trigger);
   });
 
 });
